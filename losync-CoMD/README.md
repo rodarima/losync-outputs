@@ -8,7 +8,7 @@ neighbours. The original code only communicated with its orthogonally adjacent
 neighbours, and dealt with corner halo cells by passing them through multiple
 communications. The calculation and communication phases are now processed in a
 column-by-column fashion instead of box-by-box. This is because the work
-involved in a single box was too small for tasks to be useful
+involved in a single box was too small for tasks to be useful.
 
 ## Building on the Cirrus HPC Service
 A sample build script is provided in ```CoMD/work/build.sh```.
@@ -20,6 +20,8 @@ A sample job script is provided in ```CoMD/work/submit.slurm```.
 
 A combined script to build and run the code is provided in ```CoMD/work/run.sh```.
 This script also processes the output files and convert relevant information
-into a more readable format.
+into a more readable format. It should take a walltime in the format hh:mm:ss as
+an argument to reserve that length of time on the backend. It should also be
+passed ```tampi``` as a second argument if TAMPI is required.
 
 Run-time parameters can be found in ```CoMD/work/parameters.config```.
